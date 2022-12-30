@@ -160,23 +160,23 @@ if __name__ == "__main__":
         if i == start_from:
             # initial frame is black
             plt.plot(arcS2, Eimg2, '-C0')
-            plt.plot(arcS, Eimg, '.C0', Markersize=6.0)
+            plt.plot(arcS, Eimg, '.C0', markersize=6.0)
         elif i == end_at-1:
             # final frame is red
 #            colr = [0.6, 0.0, 0.0]
             colr = 'C1'
-            plt.plot(arcS2, Eimg2, '-', Color=colr,LineWidth=1.5)
-            plt.plot(arcS, Eimg, '.',Color=colr, Markersize=8.0)                
+            plt.plot(arcS2, Eimg2, '-', color=colr,linewidth=1.5)
+            plt.plot(arcS, Eimg, '.',color=colr, markersize=8.0)                
         else:
             # interm. frames are gray
-#            plt.plot(arcS2, Eimg2, '-',Color=[0.4, 0.4, 0.4]) 
-            plt.plot(arcS2, Eimg2, '-',Color=[0.4, 0.4, 0.4], LineWidth=1.0) 
-            plt.plot(arcS, Eimg, '.',Color=[0.4, 0.4, 0.4],  Markersize=4.0)
+#            plt.plot(arcS2, Eimg2, '-',color=[0.4, 0.4, 0.4]) 
+            plt.plot(arcS2, Eimg2, '-',color=[0.4, 0.4, 0.4], linewidth=1.0) 
+            plt.plot(arcS, Eimg, '.',color=[0.4, 0.4, 0.4],  markersize=4.0)
 
     
     # save whole profile
-    plt.xlabel("Displacement [Bohr]", FontSize=15)
-    plt.ylabel("Energy [Ha]", FontSize=15)
+    plt.xlabel("Displacement [Bohr]", fontsize=15)
+    plt.ylabel("Energy [Ha]", fontsize=15)
     plt.title( "Iter.: %i to %i" % (start_from, end_at-1) )
     plt.tight_layout()
     plt.savefig('neb_optimization.png')
@@ -185,8 +185,8 @@ if __name__ == "__main__":
     plt.clf()
 #    colr = [0.6, 0.0, 0.0]
     colr = 'C1'
-    plt.plot(arcS2, Eimg2, '-',Color=colr, LineWidth=1.5)
-    plt.plot(arcS, Eimg, '.',Color=colr, MarkerSize=8.0)
+    plt.plot(arcS2, Eimg2, '-',color=colr, linewidth=1.5)
+    plt.plot(arcS, Eimg, '.',color=colr, markersize=8.0)
     
     'https://stackoverflow.com/questions/14313510/how-to-calculate-moving-average-using-numpy'
     def rolling(x, w):
@@ -210,10 +210,8 @@ if __name__ == "__main__":
     [print('E = {} Hartrees @ {} Bohrs'.format(peaks[i],peaks_locs[i]),file=f) for i in range(len(peaks))]
     f.close()
 
-#    plt.xlabel("Displacement [Bohr]",FontSize=15)
-#    plt.ylabel("Energy [Ha]", FontSize=15)
-    plt.xlabel("Displacement [Bohr]",FontSize=15)
-    plt.ylabel("Energy [Ha]", FontSize=15)
+    plt.xlabel("Displacement [Bohr]",fontsize=15)
+    plt.ylabel("Energy [Ha]", fontsize=15)
     plt.tight_layout()
 
     plt.savefig('neb_lastiter.png')
